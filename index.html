@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title> Absence Excuse Generator</title>
+</head>
+<body onload="func_generateExcuse()">
+  <h1>My Work Absence Excuse </h1>
+  <p id="myexcuse">I could not come to work because my car broke down on the way.</p>
+  
+  <script>
+    // JavaScript function to generate a random work absence excuse
+    function func_generateExcuse() {
+      let who = ['My alarm clock', 'My pet', 'My Son', 'My family member'];
+      let action = ['broke', 'hid', 'lost', 'spilled coffee on'];
+      let what = ['my phone', 'my car keys', 'my wallet', 'my work clothes'];
+      let when = ['right before leaving', 'in the middle of the night', 'while I was getting ready', 'as I was about to leave'];
+      let why = ['because I had to take care of an emergency', 'because of sudden illness', 'because of a family situation', 'because of a personal issue'];
+      
+      // Randomly select one item from each array
+      let randomWho = who[Math.floor(Math.random() * who.length)];
+      let randomAction = action[Math.floor(Math.random() * action.length)];
+      let randomWhat = what[Math.floor(Math.random() * what.length)];
+      let randomWhen = when[Math.floor(Math.random() * when.length)];
+      let randomWhy = why[Math.floor(Math.random() * why.length)];
+      
+      // Form the excuse sentence
+      let myexcuse = "I could not come to work " + randomWhy + ", " + randomWho + " " + randomAction + " " + randomWhat + " " + randomWhen + ".";
+      
+      // Set the excuse into the HTML element with id "excuse"
+      document.getElementById('myexcuse').innerHTML = myexcuse;
+    }
+  </script>
+</body>
+</html>
